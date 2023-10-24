@@ -60,7 +60,7 @@ export class WeatherComponent implements OnInit {
           this.weatherData = data;
          // console.log(this.weatherData)
           this.showWeatherBox = true;
-          this.setTemperatureClass(this.weatherData.main.temp);
+          this.setTemperatureClass(this.weatherData.temp);
           this.getCityName(position.coords.latitude, position.coords.longitude)
         });
       });
@@ -90,12 +90,11 @@ export class WeatherComponent implements OnInit {
   }
 
   getCityName(latitude: number, longitude: number){
+    debugger
     this.weatherService.getCityNameByCoords(latitude, longitude)  
     .subscribe(myCity => {
-      if(myCity.results.length > 0){
-        this.cityName = myCity.results[0].components.city;
+        this.cityName = myCity.address.state;
         console.log(this.cityName);
-      }
         });
   }
 }

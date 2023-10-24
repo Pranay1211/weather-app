@@ -37,7 +37,7 @@ export class WeatherService {
     return this.http.get(url, this.options);
   }
 
-  getWeatherByCoords(lat: number, lon: number) {
+  getWeatherByCoords(lat: number, lon: number): Observable<any> {
     let url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?lat='+lat+'&lon='+lon
     const params = {
       lat: lat.toString(),
