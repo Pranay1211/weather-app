@@ -1,0 +1,94 @@
+// .weather {
+//     text-align: center;
+//     margin: 20px;
+//     transition: background-color 0.5s; /* Smooth transition for background color change */
+//   }
+
+//   /* Adjust the background color based on temperature range */
+//   .weather-cold {
+//     background-color: #3498db; /* Cool blue for cold temperatures */
+//   }
+
+//   .weather-moderate {
+//     background-color: #f1c40f; /* Warm yellow for moderate temperatures */
+//   }
+
+//   .weather-warm {
+//     background-color: #e74c3c; /* Hot red for warm temperatures */
+//   }
+/* Add your general styling here */
+
+// .weather-cold {
+//     background-color: #3498db; /* Cool blue for cold temperatures */
+//     color: #fff; /* White text for better visibility */
+//   }
+
+//   .weather-moderate {
+//     background-color: #f1c40f; /* Warm yellow for moderate temperatures */
+//     color: #000; /* Black text for better visibility */
+//   }
+
+//   .weather-warm {
+//     background-color: #e74c3c; /* Hot red for warm temperatures */
+//     color: #fff; /* White text for better visibility */
+//   }
+
+body {
+  background-color: azure;
+}
+
+.container {
+  height: 100vh;
+}
+
+
+.input-box {
+  margin-top: 25%;
+  text-align: center;
+  max-width: 425px;
+  padding: 114px;
+  border: 1px solid #ccc;
+  border-radius: 76px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: azure;
+}
+
+.seperator {
+  margin: 25px 0;
+}
+
+.seperator::before {
+  content: "or";
+  color: #ccc;
+  font-size: 19px;
+  padding: 0 15px;
+  background: #fff;
+}
+
+.weather-box {
+  margin-top: 5%;
+  color: #fff;
+  text-align: center;
+  max-width: 387px;
+  padding: 145px;
+  border: 1px solid #ccc;
+  border-radius: 76px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  //background-image: url(https://4kwallpapers.com/images/wallpapers/glacier-mountains-snow-covered-dark-sky-green-trees-1600x900-3930.jpg);
+}
+
+
+.temperature-label,
+.humidity-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.temperature-value,
+.humidity-value {
+  font-size: 46px;
+}
+
+.wholepagebg{
+  background-color: rgb(25, 158, 161);
+}

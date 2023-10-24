@@ -1,0 +1,107 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="#">Weather App</a>
+  </nav>
+  
+  <div class="container mt-4">
+    <div class="weather" [ngClass]="temperatureClass">
+      <div class="search input-group mb-3">
+        <input [(ngModel)]="city" placeholder="Enter city" class="form-control" />
+        <div class="input-group-append">
+          <button (click)="getWeather()" class="btn btn-primary">Get Weather</button>
+        </div>
+      </div>
+      <div class="location-button">
+        <button (click)="useMyLocation()" class="btn btn-success">Use My Location</button>
+      </div>
+      <div class="data card">
+        <h3 class="location card-header">{{ weatherData.city }}</h3>
+        <div class="card-body">
+          <div class="weather-info">
+            <div class="temperature">
+              <p class="temperature-label">Temperature</p>
+              <p class="temperature-value">{{ weatherData.temp }}°C</p>
+            </div>
+            <div class="humidity">
+              <p class="humidity-label">Humidity</p>
+              <p class="humidity-value">{{ weatherData.humidity }}%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+   -->
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="#">Weather App</a>
+  </nav>
+  
+  <div class="container mt-4">
+    <div class="weather" [ngClass]="temperatureClass">
+      <h2 class="app-title">Weather App</h2>
+      <hr>
+      <div class="search input-group mb-3">
+        <input [(ngModel)]="city" placeholder="Enter city" class="form-control" />
+        <div class="input-group-append">
+          <button (click)="getWeather()" class="btn btn-primary">Get Weather</button>
+        </div>
+      </div>
+      <div class="location-button">
+        <button (click)="useMyLocation()" class="btn btn-success">Use My Location</button>
+      </div>
+      <div class="data card">
+        <h3 class="location card-header">{{ cityName }}</h3>
+        <div class="card-body">
+          <div class="weather-info">
+            <div class="temperature">
+              <p class="temperature-label">Temperature</p>
+              <p class="temperature-value">{{ weatherData.temp }}°C</p>
+            </div>
+            <div class="humidity">
+              <p class="humidity-label">Humidity</p>
+              <p class="humidity-value">{{ weatherData.humidity }}%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<div class="wholepagebg">
+  <div class="container d-flex flex-column align-items-center justify-content-center h-100">
+    <div *ngIf="!showWeatherBox">
+      <form (ngSubmit)="getWeather()">
+        <div class="input-box">
+          <h3 style="margin-bottom: 42px;">Weather App</h3>
+          <input [(ngModel)]="city" name="search" #search="ngModel" placeholder="Enter city" class="form-control"
+            required />
+          <div *ngIf="search.invalid && search.touched" class="text-danger">
+            Please enter a valid city name.
+          </div>
+          <button (click)="getWeather()" class="btn btn-primary mt-3">Get Weather</button>
+          <div class="seperator"></div>
+          <div class="location-button mt-3">
+            <button (click)="useMyLocation()" class="btn btn-success">Use My Location</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="weather-box" *ngIf="showWeatherBox" [style.backgroundImage]="getBackgroundImage()">
+      <h3 class="location">{{ cityName }}</h3>
+      <div class="weather-info">
+        <div class="temperature">
+          <p class="temperature-label">Temperature</p>
+          <p class="temperature-value">{{ weatherData.temp }}°C</p>
+        </div>
+        <div class="humidity">
+          <p class="humidity-label">Humidity</p>
+          <p class="humidity-value">{{ weatherData.humidity }}%</p>
+        </div>
+      </div>
+      <button (click)="goBack()" class="btn btn-secondary back-button">Back</button>
+    </div>
+  </div>
+</div>
